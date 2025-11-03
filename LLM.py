@@ -13,7 +13,6 @@ from typing import Dict, List, Any
 from datetime import datetime
 from abc import ABC, abstractmethod
 from openai import OpenAI, AsyncOpenAI
-from dotenv import load_dotenv
 from Fetch_data import ResearchPaper
 import logging
 logging.basicConfig(
@@ -56,10 +55,6 @@ class OpenAIAnalyzer(LLMAnalyzer):
     def _validate_api_key(self, api_key: str):
         """Validate OpenAI API key, and listing available models"""
         if not api_key: # get api_key from .env file if not provided
-            if load_dotenv():
-                print("Success: .env file found with some environment variables")
-            else:
-                print("Caution: No environment variables found. Please create .env file in the root directory or add environment variables in the .env file")
             api_key=os.environ["OPENAI_API_KEY"]
             custom_api_url=os.environ["OPENAI_API_BASE"] # optional custom API base URL
             if not api_key: # didn't find api_key in .env file
