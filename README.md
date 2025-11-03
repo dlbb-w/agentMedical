@@ -1,7 +1,7 @@
-<!-- <h1 align="center">agentMedical</h1> -->
+<h1 align="center">agentMedical</h1>
 <figure align="center">
   <img src="https://github.com/user-attachments/assets/311c476e-8aef-4cee-98e6-fa4cdf326303" alt="agentMedical">
-  <figcaption>An agent can search+analyze+summarize medical papers</figcaption>
+  figcaption style="text-align: center;">An agent can search+analyze+summarize medical papers</figcaption>
 </figure>
 
 
