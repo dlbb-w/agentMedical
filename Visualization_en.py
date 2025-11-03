@@ -151,9 +151,6 @@ def main():
         if API_key and Model:
             Analyst = ResearchAnalyzer(database_client=PubMedClient(), 
                                     llm_analyzer=OpenAIAnalyzer(api_key=API_key, model=Model) )
-        else:
-            Analyst = ResearchAnalyzer(database_client=PubMedClient(), 
-                                    llm_analyzer=OpenAIAnalyzer(api_key=os.getenv('EX_OPENAI_API_KEY'), model="gpt-4o-mini"))
 
 
     # ###################################################
