@@ -1,4 +1,4 @@
-<h1 align="center">agentMedical</h1>
+<h1 align="center">agent Medical</h1>
 
 ## Web link
 Try with your OpenAI API key:
@@ -25,3 +25,5 @@ https://dlbb-w-agentmedical-visualization-en-vzlhnq.streamlit.app/
 
 
 ## Video display
+https://youtu.be/-qSq3hbOkmQ
+[![Watch the video](https://youtu.be/-qSq3hbOkmQ)](https://youtu.be/-qSq3hbOkmQ)
