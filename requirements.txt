@@ -1,0 +1,7 @@
+plotly
+pandas
+numpy
+os
+json
+re
+asyncio
