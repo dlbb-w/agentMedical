@@ -1,4 +1,9 @@
 <h1 align="center">agentMedical</h1>
+
+## Web link
+Try with your OpenAI API key:
+https://dlbb-w-agentmedical-visualization-en-vzlhnq.streamlit.app/
+
 <figure align="center">
   <img src="https://github.com/user-attachments/assets/311c476e-8aef-4cee-98e6-fa4cdf326303" alt="agentMedical">
 </figure>
