@@ -109,10 +109,6 @@ def preprocess_papers(paper_infos):
 def main():
     # Title 
     st.markdown('<h1 class="main-header">🧑‍⚕️ Smart Analyst</h1>', unsafe_allow_html=True)
-    # Analyst = ResearchAnalyzer(database_client=PubMedClient(), 
-    #                            llm_analyzer=OpenAIAnalyzer(api_key=os.getenv('EX_OPENAI_API_KEY'), model="gpt-4o-mini")
-    #                            )
-    
     
     # ###################################################
     #                     Sidebar 
@@ -164,6 +160,13 @@ def main():
     #                     Main Page
     # ###################################################
     if query and run:
+        if not API_key:
+            st.error("❌ Please input your API key")
+            return
+        elif API_key == "local":
+            Analyst = ResearchAnalyzer(database_client=PubMedClient(), 
+                                    llm_analyzer=OpenAIAnalyzer())
+            
         # Status Bar: showing the workflow progress
         with st.status("👇 Smart Analyst is working and updating workflow...", expanded=True) as status:
             # placeholder

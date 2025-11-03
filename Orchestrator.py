@@ -372,11 +372,15 @@ class ResearchAnalyzer:
         print("\n" + "=" * 80)
 
 
+
+# ============================================================================
+# For Test
+# ============================================================================
+
 def main():
     # Initialize components
     pubmed_client = PubMedClient()
     openai_analyzer = OpenAIAnalyzer(api_key=os.getenv('EX_OPENAI_API_KEY'), model="gpt-4o-mini")
-    # openai_analyzer = OpenAIAnalyzer(model="gpt-4o-mini")
     # Create analyzer
     analyzer = ResearchAnalyzer(
         database_client=pubmed_client,
@@ -399,52 +403,40 @@ def main():
         ### Quality filters
         has_abstract=True,
         languages=["eng"],
-        # free_full_text=True,
+        free_full_text=True,
         
         ### MeSH terms for precise medical concepts
         mesh_terms=["Hyperlipidemias", "Hypolipidemic Agents", "Lipoproteins", "Cholesterol", "Cardiovascular Diseases", "Atherosclerosis"],
         
         ### Publication filters
-        # publication_types=["Clinical Trial", "Randomized Controlled Trial", "Meta-Analysis"],
-        # article_types=["Journal Article"],
-        # journals=["The Lancet", "New England Journal of Medicine", "JAMA"],  # High-impact journals
+        publication_types=["Clinical Trial", "Randomized Controlled Trial", "Meta-Analysis"],
+        article_types=["Journal Article"],
+        journals=["The Lancet", "New England Journal of Medicine", "JAMA"],  # High-impact journals
 
         ### Species/Sex/Age specific filter
         species=["humans"],
-        # sex="female",
-        # age_groups=["Adult", "Middle Aged"],        
+        sex="female",
+        age_groups=["Adult", "Middle Aged"],        
 
         ### Sort by (default is relevance)
-        # sort_by="pub_date"  # publication date(newest first)
+        sort_by="pub_date"  # publication date(newest first)
     )
-    # paper_ids = analyzer.search_papers(search_params=search_params)
-    # papers = analyzer.analyze_research(
-    #     paper_ids=paper_ids[:3],
-    #     # search_query="hyperlipidemia treatment",
-    #     relevance_theme=relevance_theme,
-    #     filter_relevant_only=filter_relevant_only
-    # )
-    # # analyzer.print_summary(papers)
+    paper_ids = analyzer.search_papers(search_params=search_params)
+    papers = analyzer.analyze_research(
+        paper_ids=paper_ids[:3],
+        # search_query="hyperlipidemia treatment",
+        relevance_theme=relevance_theme,
+        filter_relevant_only=filter_relevant_only
+    )
+    analyzer.print_summary(papers)
 
 
     user_query = "the application of CRISPR gene editing in cancer treatment"
     llm_query, paper_ids = analyzer.search_papers(user_query=user_query)
     print(f"LLM generated PubMed query: {llm_query}")
     print(f"Found {len(paper_ids)} papers matching the query.")
-    # answer = input("Continue?(y/n): ").strip().lower()
-    # if answer == "y":
-    #     papers = analyzer.analyze_research(
-    #         paper_ids=paper_ids,
-    #         relevance_theme=user_query,
-    #         filter_relevant_only=False
-    #     )
-    # else:
-    #     print("程序已终止。")
 
     
-
-
-
 
 if __name__ == "__main__":
     main()

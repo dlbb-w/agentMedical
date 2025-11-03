@@ -433,24 +433,3 @@ class OpenAIAnalyzer(LLMAnalyzer):
             logger.error(f"Failed to parse JSON response, see '{file_name}'.", exc_info=True)
             raise e
 
-
-
-# ============================================================================
-# Example Test
-# ============================================================================
-
-def main():
-    with open('r_llm_details225.json', "r", encoding="utf-8") as f:
-        example_papers = json.load(f)
-    papers = example_papers['papers']
-    papers = [ResearchPaper(**p) for p in papers if p]  # Convert dicts to ResearchPaper objects
-    print(f"Loaded {len(papers)} example papers from JSON")
-        
-    theme = "他汀药物的副作用，发表时间限制在2021-2024年"
-
-    analyzer = OpenAIAnalyzer()
-    params = analyzer.generate_pubmed_query(theme)
-
-
-if __name__ == "__main__":
-    main()
