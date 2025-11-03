@@ -26,4 +26,3 @@ https://dlbb-w-agentmedical-visualization-en-vzlhnq.streamlit.app/
 
 ## Video display
 https://youtu.be/-qSq3hbOkmQ
-[![Watch the video](https://youtu.be/-qSq3hbOkmQ)](https://youtu.be/-qSq3hbOkmQ)
