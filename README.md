@@ -1,6 +1,8 @@
-<h1 align="center">agentMedical</h1>
-![截屏2025-11-03 15 54 06](https://github.com/user-attachments/assets/311c476e-8aef-4cee-98e6-fa4cdf326303)
-*An agent can search+analyze+summarize medical papers*
+<!-- <h1 align="center">agentMedical</h1> -->
+<figure align="center">
+  <img src="https://github.com/user-attachments/assets/311c476e-8aef-4cee-98e6-fa4cdf326303" alt="agentMedical">
+  <figcaption>An agent can search+analyze+summarize medical papers</figcaption>
+</figure>
 
 
 ## Workflow
